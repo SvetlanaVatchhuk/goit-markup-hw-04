@@ -16,6 +16,12 @@
   --bg-accent-color: #2f303a;
   --bg-logo-color: #2196f3;
   --bg-color-btn: #f5f4fa;
+  --bg-fill-color: #AFB1B8;
+
+
+  /* СЕТКА кол-во элементов */
+  --items: 1;   /* СЕТКА кол-во элементов */
+  --indent: 30px;  /* СЕТКА растояние в рх между элементами */
 }
 
 body {
@@ -88,6 +94,8 @@ img {
 
 .header{
   border: 1px solid #ECECEC;
+
+  
 }
 .header-container{
   display: flex;
@@ -172,6 +180,28 @@ img {
 .contacts-link:focus {
   color: var(--text-logo-color);
 }
+.contacts-icon{
+  fill: var(--text-comment-color);
+  stroke: var(--text-comment-color);
+}
+
+.contacts-link{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+}
+.contacts-icon:hover,
+.contacts-icon:focus {
+  fill: var(--text-logo-color);
+  stroke: var(--text-logo-color);
+}
+.contacts-link:hover .contacts-icon,
+.contacts-link:focus .contacts-icon{
+  fill: var(--text-logo-color);
+  stroke: var(--text-logo-color);
+}
+
 /* header end */
 
 /* footer */
@@ -227,6 +257,37 @@ img {
 .address-contact-link:focus {
   color: var(--text-logo-color);
 }
+
+.footer-title{
+font-family: 'Roboto';
+font-weight: 700;
+font-size: 14px;
+line-height: calc(14 / 16);
+letter-spacing: 0.03em;
+text-transform: uppercase;
+
+color: var(--secondary-text-color);
+
+margin-bottom: 20px;
+}
+.footer-block{
+display: flex; 
+gap: 70px;
+}
+.footer-block-two{
+  padding-top: 12px;
+}
+/* ---- */
+
+.socials-link.footer{
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.socials-icon.footer{
+  fill: var(--bg-body-color);
+}
+
 /* footer end*/
 
 /* Секция  Ефективні рішення для вашого бізнесу с кнопкой*/
@@ -238,6 +299,16 @@ img {
   text-align: center;
 
   background: var(--bg-accent-color);
+
+
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/fon/cap-section.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1600px;
+  margin-right: auto;
+  margin-left: auto;
+  
 }
 
 .cap-title {
@@ -295,6 +366,45 @@ img {
 .specificity-list-blok{
   width: 270px;
 }
+
+
+/* 
+.specificity-list-blok::before{
+  display: block;
+  content: "";
+  height: 120px;
+  background: #F5F4FA;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.specificity-list-blok.one::before{
+  background-image: url(../images/specificity/group-1.svg);
+}
+.specificity-list-blok.two::before{
+  background-image: url(../images/specificity/clock-1.svg);
+}
+.specificity-list-blok.three::before{
+  background-image: url(../images/specificity/diagram-1.svg);
+}
+.specificity-list-blok.chtyre::before{
+  background-image: url(../images/specificity/astronaut-1.svg);
+} */
+
+.specificity-icon{
+  background: #F5F4FA;
+  border-radius: 4px;
+  height: 120px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.specificity-list-icon{
+  
+}
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -339,11 +449,16 @@ img {
   color: var(--primary-text-color);
 }
 /* секция Наша команда  */
-.command-list{
+
+/* .command-list{
   display: flex;
   gap: 30px;
-}
+} */
 
+.command-list.picture{
+  --items: 4;
+  
+}
 .command {
   background: var(--bg-color-btn);
 }
@@ -361,14 +476,13 @@ img {
 }
 .command-item {
   background: var(--bg-body-color);
+
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
- border-radius: 0px 0px 4px 4px;
-
-}
-.command-item-img{
+  border-radius: 0px 0px 4px 4px;
  
-
+ 
 }
+
 .command-caption {
   margin-bottom: 10px;
   margin-top: 0;
@@ -386,11 +500,50 @@ img {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--text-comment-color);
+
+  margin-bottom: 16px;
 }
 .command-caption-heading{
   padding: 30px 0;
+ 
+}
+.socials{  /* список ul*/
+  display: flex; 
+  gap: 10px;
+justify-content: center;
 
 }
+.socials-link{    /* ссылка <a*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: var(--bg-body-color);
+  border-radius: 50%;
+}
+.socials-icon{    /* иконка */
+  fill: var(--bg-fill-color);
+}
+.socials-icon:hover{
+fill: var(--bg-body-color);
+}
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon{
+  fill: var(--bg-body-color);
+}
+.socials-link:hover,
+.socials-link:focus{
+  background-color: var(--bg-logo-color);
+}
+
+/* ЗАГОТОВКА
+<svg width="" height="">
+<use href=""></use>
+</svg> 
+
+*/
+
 /* Портфоліо  */
 /* ФІЛЬТР  */
 
@@ -428,26 +581,39 @@ img {
 .filter-btn:focus {
   background: var(--bg-logo-color);
   color: var(--secondary-text-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* picture  */
 
+/*----СЕТКА----*/
 
+.picture{  /*СЕТКА динамическое кол-во элементов в строке*/
+  --items: 3;
+}
 
-.picture{     /*список*/
+.picture{     /* СЕТКА список*/
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: var(--indent);  /* СЕТКА растояние в рх */
   align-items: center;
   justify-content: center; 
 }
 
+.picture-img {     /*СЕТКА формула ширины элемента*/
+  width: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
+}
+/*----СЕТКА конец-----*/
+
 .picture-img {    /* li с фото h2 и p */
-  background: var(--bg-body-color);
-  
+  background: var(--bg-body-color);  
   border: 1px solid #EEEEEE;
-  width: calc((100% - 60px) / 3);
 
 }
+.picture-img:hover,
+.picture-img:focus{
+box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .picture-title-subtitle{  /*блок h2 и p */
  padding-top: 20px;
  padding-bottom: 20px;
@@ -471,3 +637,43 @@ img {
   letter-spacing: 0.03em;
   color: var(--text-comment-color);
 }
+/* <!--Постійні клієнти--> */
+.client-title{
+font-weight: 700;
+font-size: 36px;
+line-height: calc(42 / 36);
+text-align: center;
+letter-spacing: 0.03em;
+color: var(--primary-text-color);
+
+margin-bottom: 50px;
+}
+.client-list{    /* список ul*/
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.client-link{   /* ссылка <a*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--bg-fill-color);
+  border-radius: 4px;
+}
+
+
+.client-icon{   /* иконка */
+  fill: var(--bg-fill-color);
+}
+
+.client-link:hover .client-icon,
+.client-link:focus .client-icon{
+  fill: var(--bg-logo-color);
+}
+.client-link:hover,
+.client-link:focus{
+  border: 1px solid var(--bg-logo-color);
+}
+
